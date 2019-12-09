@@ -1,14 +1,14 @@
 <%= form_with(model: @post, local: true) do |f| %>
         <div class="form-group">
-          <%= f.label :area, 'メッセージ' %>
+          <%= f.label :area, '地域' %>
           <%= f.text_area :area, class: 'form-control', rows: 5 %>
         </div>
         <div class="form-group">
-          <%= f.label :country, 'メッセージ' %>
+          <%= f.label :country, '国' %>
           <%= f.text_area :country, class: 'form-control', rows: 5 %>
         </div>
         <div class="form-group">
-          <%= f.label :place, 'メッセージ' %>
+          <%= f.label :place, '観光場所' %>
           <%= f.text_area :place, class: 'form-control', rows: 5 %>
         </div>
         <div class="form-group">
@@ -16,8 +16,8 @@
           <%= f.text_area :comment, class: 'form-control', rows: 5 %>
         </div>
         <div class="field">
-        <%= form.label :photo %>
-        <%= form.file_field :photo %>
+        <%= f.label :photo %>
+        <%= f.file_field :photo %>
         </div>
         <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
 <% end %>
