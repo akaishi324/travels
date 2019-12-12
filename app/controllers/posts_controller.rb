@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_user_logged_in, only: [:edit]
+  
   def new
     if logged_in?
       @post = current_user.posts.build  # form_with 用
@@ -34,8 +36,8 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(id:params[:id])
-    if @post.user_id != @current_user.id
+    @post = Post.find(params[:id])
+    if @post.user_id!= @current_user.id
       flash[:notice] = "権限がありません"
       redirect_to("/")
     end
