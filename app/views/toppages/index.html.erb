@@ -3,7 +3,10 @@
    <h1>次の旅先を見つけよう</h1>
    <h2>投稿一覧</h2>
    <%= render 'microposts/microposts', posts: @posts %>
-
+   <%= form_with url: searches_path, method: :get, local: true do |f| %>
+  <%= f.text_field :area %>
+  <%= f.submit :search %>
+<% end %>
 <% else %>
 <h1>次の旅先を見つけよう</h1>
    <h2>投稿一覧</h2>
