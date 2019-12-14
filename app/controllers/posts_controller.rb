@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_user_logged_in, only: [:edit]
+  before_action :require_user_logged_in, only: [:show, :edit, :destroy]
   before_action :correct_user, only: [:destroy]
   
   def new
@@ -22,7 +22,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-  end
+    @user = User.find_by(id: @post.user_id)
+    
+    
+  end 
   
   def update
     @post = Post.find(params[:id])

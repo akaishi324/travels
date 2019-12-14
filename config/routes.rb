@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   resources :posts, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :searches,only:[:index]
+  resources :syousai,only:[:show]
 end
