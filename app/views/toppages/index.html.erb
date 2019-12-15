@@ -2,7 +2,7 @@
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
    <h1>次の旅先を見つけよう</h1>
    <h2>投稿一覧</h2>
-   <%= render 'microposts/microposts', posts: @posts %>
+   <%= render 'microposts/micropost', posts: @posts %>
    <fotter>
     <h2>地域ごとに見る</h2>
    <%= form_with url: searches_path, method: :get, local: true do |f| %>
@@ -13,7 +13,7 @@
 <% else %>
 <h1>次の旅先を見つけよう</h1>
    <h2>投稿一覧</h2>
-   <%= render 'microposts/microposts', posts: @posts %>
+   <%= render 'microposts/micropost', posts: @posts %>
     <fotter>
     <h2>地域ごとに見る</h2>
    <%= form_with url: searches_path, method: :get, local: true do |f| %>
