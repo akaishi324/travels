@@ -3,7 +3,7 @@
     <li class="media mb-3">
       <div class="media-body">
         <div>
-          <%= link_to post.id, post_path(post.id) %> <span class="text-muted">posted at <%= post.created_at %></span>
+          <%= link_to post.user.name, post_path(post.id) %> ←詳細<span class="text-muted">  posted at <%= post.created_at %></span>
         </div>
         <div>
           <p><%= post.area %></p>
