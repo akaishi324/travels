@@ -1,6 +1,7 @@
 <h1>id: <%= @post.id %> のメッセージ編集ページ</h1>
 <%= form_with(model: @post, local: true) do |f| %>
         <div class="form-group">
+          <%= render 'layouts/error_messages', model: f.object %>
           <%= f.label :area, '地域' %>
           <%= f.select :area,[["アジア","アジア"], ["ヨーロッパ","ヨーロッパ"], ["北アメリカ","北アメリカ"], ["南アメリカ","南アメリカ"], ["オセアニア","オセアニア"], ["アフリカ","アフリカ"]], class: 'form-control', rows: 5 %>
         </div>

@@ -1,4 +1,5 @@
 <%= form_with(model: @post, local: true) do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
           <%= f.label :area, '地域' %>
           <%= f.select :area,[["アジア","アジア"], ["ヨーロッパ","ヨーロッパ"], ["北アメリカ","北アメリカ"], ["南アメリカ","南アメリカ"], ["オセアニア","オセアニア"], ["アフリカ","アフリカ"]], :prompt => "選択してください", class: 'form-control', rows: 5 %>
