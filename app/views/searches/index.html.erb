@@ -1,5 +1,5 @@
  <% if params[:area].present? %>
-<h1><%= @post1.area %>投稿一覧</h1>
+ <h1><%= params[:area]%>投稿一覧</h1>
 <%= render 'microposts/micropost', posts: @posts %>
 <% else %>
  
