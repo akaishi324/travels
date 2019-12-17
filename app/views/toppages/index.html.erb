@@ -1,18 +1,25 @@
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
    <h1>次の旅先を見つけよう</h1>
+   <div class="container">
+     <div class="border-bottom">
    <h2>投稿一覧</h2>
+     </div>
    <%= render 'microposts/micropost', posts: @posts %>
-   <fotter>
-    <h2>地域ごとに見る</h2>
-   <%= form_with url: searches_path, method: :get, local: true do |f| %>
+   <footer>
+   <h2>地域ごとに見る</h2>
+  <%= form_with url: searches_path, method: :get, local: true do |f| %>
   <%= f.select :area,[["アジア","アジア"], ["ヨーロッパ","ヨーロッパ"], ["北アメリカ","北アメリカ"], ["南アメリカ","南アメリカ"], ["オセアニア","オセアニア"], ["アフリカ","アフリカ"]], :prompt => "選択してください", class: 'form-control', rows: 5 %>
   <%= f.submit :search %>
-  </fotter>
+  </footer>
+  </div>
 <% end %>
 <% else %>
 <h1>次の旅先を見つけよう</h1>
+    <div class="container">
+   <div class="border-bottom">
    <h2>投稿一覧</h2>
+   </div>
    <%= render 'microposts/micropost', posts: @posts %>
     <fotter>
     <h2>地域ごとに見る</h2>
@@ -21,4 +28,5 @@
   <%= f.submit :search %>
   <% end %>
   </fotter>
+  </div>
 <% end %>

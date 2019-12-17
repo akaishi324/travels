@@ -3,13 +3,16 @@
     <li class="media mb-3">
       <div class="media-body">
         <div>
+          
           <%= link_to post.user.name, post_path(post.id) %> ←詳細<span class="text-muted">  posted at <%= post.created_at %></span>
+      
         </div>
-        <div>
+        <div class="border-bottom">
           <p><strong>area:</strong><%= post.area %></p>
           <p><strong>country:</strong><%= post.country %></p>
-          <p><strong>place:</strong><%= post.place %></p>
-          <p><strong>comment:</strong><%= post.comment %></p>
+          <p><strong>place:</strong><%= post.place %></tr>
+          <p><strong>comment:</strong><%= post.comment %></tr>
+          < class="border-top">
           <p>
           <strong>photo:</strong>
           <%= image_tag post.photo.url if post.photo? %>
