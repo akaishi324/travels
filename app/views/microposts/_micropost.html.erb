@@ -6,10 +6,10 @@
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
         </div>
         <div>
-          <p><%= post.area %></p>
-          <p><%= post.country %></p>
-          <p><%= post.place %></p>
-          <p><%= post.comment %></p>
+          <p><strong>area:</strong><%= post.area %></p>
+          <p><strong>country:</strong><%= post.country %></p>
+          <p><strong>place:</strong><%= post.place %></p>
+          <p><strong>comment:</strong><%= post.comment %></p>
           <p>
           <strong>photo:</strong>
           <%= image_tag post.photo.url if post.photo? %>

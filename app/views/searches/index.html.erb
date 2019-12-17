@@ -1,6 +1,6 @@
  <% if params[:area].present? %>
  <h1><%= params[:area]%>投稿一覧</h1>
 <%= render 'microposts/micropost', posts: @posts %>
-<% else %>
+<%= link_to 'トップページへ戻る', root_path %>
  
 <% end %>

@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="/">For Travelers</a>
       <ul class="navbar-nav">
        <% if logged_in? %>
-          <li class="nav-item"><%= link_to 'My profile', user_path(current_user) , class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'My posts', user_path(current_user) , class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'post' ,  new_post_path , class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete , class: 'nav-link' %></li>
         <% else %>
