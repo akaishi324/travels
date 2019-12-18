@@ -1,26 +1,30 @@
 <h1><%= @user.name %>の投稿詳細ページ</h1>
 <% if @post.user_id==@current_user.id %>
 <%= link_to @user.name, syousai_path %>
-          <p><%= @post.area %></p>
-          <p><%= @post.country %></p>
-          <p><%= @post.place %></p>
-          <p><%= @post.comment %></p>
+          <p><strong>area:</strong><%= @post.area %></p>
+          <p><strong>country:</strong><%= @post.country %></p>
+          <p><strong>place:</strong><%= @post.place %></p>
+          <p><strong>comment:</strong><%= @post.comment %></p>
           <p>
+           <% if @post.photo? %>
           <strong>photo:</strong>
            <%# app/assets/images %>
            <%= image_tag @post.photo.url, alt: "Rails icon"%>
+           <% end %>
           </p>
 <p><%= link_to 'edit',  edit_post_path(@post)%></p>
 <% else %>
 <%= link_to @user.name, syousai_path %>
-          <p><%= @post.area %></p>
-          <p><%= @post.country %></p>
-          <p><%= @post.place %></p>
-          <p><%= @post.comment %></p>
+          <p><strong>area:</strong><%= @post.area %></p>
+          <p><strong>country:</strong><%= @post.country %></p>
+          <p><strong>place:</strong><%= @post.place %></p>
+          <p><strong>comment:</strong><%= @post.comment %></p>
           <p>
+          <% if @post.photo? %>
           <strong>photo:</strong>
            <%# app/assets/images %>
            <%= image_tag @post.photo.url, alt: "Rails icon"%>
+           <% end %>
           </p>
 
 <% end %>
