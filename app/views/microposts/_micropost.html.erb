@@ -11,8 +11,11 @@
           <p><strong>place:</strong><%= post.place %></p>
           <p class="text-justify"><strong>comment:</strong><%= post.comment %></p>
           <p>
+          <% if post.photo? %>
           <strong>photo:</strong>
-          <%= image_tag post.photo.url if post.photo? %>
+           <%# app/assets/images %>
+           <%= image_tag post.photo.url, alt: "Rails icon"%>
+           <% end %>
           </p>
         </div>
       </div>

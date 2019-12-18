@@ -1,5 +1,5 @@
-<header class="mb-4">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark mb-4">
     <a class="navbar-brand " href="/">For Travelers</a>
        <% if logged_in? %>
        <ul class="navbar-nav mr-auto">
@@ -15,6 +15,7 @@
           <%= f.submit :search %>
           <% end %>
           </li>
+       </ul>
         <% else %>
          <ul class="navbar-nav mr-auto">
           <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
@@ -26,8 +27,8 @@
           <%= form_with url: searches_path, method: :get, local: true do |f| %>
           <%= f.select :area,[["アジア","アジア"], ["ヨーロッパ","ヨーロッパ"], ["北アメリカ","北アメリカ"], ["南アメリカ","南アメリカ"], ["オセアニア","オセアニア"], ["アフリカ","アフリカ"]], :prompt => "選択してください", class: 'form-control', rows: 5 %>
           <%= f.submit :search %>
-          </li>
           <% end %>
+          </li>
+        </ul>  
         <% end %>
   </nav>
-</header>

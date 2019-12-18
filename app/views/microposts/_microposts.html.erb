@@ -10,11 +10,14 @@
         <div class="border-bottom">
           <p><strong>area:</strong><%= post.area %></p>
           <p><strong>country:</strong><%= post.country %></p>
-          <p><strong>place:</strong><%= post.place %></tr>
-          <p class="text-justify"><strong>comment:</strong><%= post.comment %></tr>
+          <p><strong>place:</strong><%= post.place %></p>
+          <p class="text-justify"><strong>comment:</strong><%= post.comment %></p>
           <p>
+          <% if post.photo? %>
           <strong>photo:</strong>
-          <%= image_tag post.photo.url if post.photo? %>
+          <%# app/assets/images %>
+          <%= image_tag post.photo.url, alt: "Rails photo"%>
+          <% end %>
           </p>
         </div>
       </div>

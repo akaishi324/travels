@@ -7,7 +7,8 @@
           <p><%= @post.comment %></p>
           <p>
           <strong>photo:</strong>
-          <%= image_tag @post.photo.url if @post.photo? %>
+           <%# app/assets/images %>
+           <%= image_tag @post.photo.url, alt: "Rails icon"%>
           </p>
 <p><%= link_to 'edit',  edit_post_path(@post)%></p>
 <% else %>
@@ -18,8 +19,8 @@
           <p><%= @post.comment %></p>
           <p>
           <strong>photo:</strong>
-          <%= image_tag @post.photo.url if @post.photo? %>
+           <%# app/assets/images %>
+           <%= image_tag @post.photo.url, alt: "Rails icon"%>
           </p>
 
 <% end %>
-<!--form.select-->
