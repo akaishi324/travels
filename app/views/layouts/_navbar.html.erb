@@ -1,15 +1,33 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">For Travelers</a>
-      <ul class="navbar-nav">
+    <a class="navbar-brand " href="/">For Travelers</a>
        <% if logged_in? %>
+       <ul class="navbar-nav mr-auto">
           <li class="nav-item"><%= link_to 'My posts', user_path(current_user) , class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'post' ,  new_post_path , class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete , class: 'nav-link' %></li>
+       </ul>
+       <ul class="navbar-nav justify-content-end ">
+          <li class="nav-item text-light pr-4 ">地域ごとに見る</li>
+          <li class="nav-item "> 
+          <%= form_with url: searches_path, method: :get, local: true do |f| %>
+          <%= f.select :area,[["アジア","アジア"], ["ヨーロッパ","ヨーロッパ"], ["北アメリカ","北アメリカ"], ["南アメリカ","南アメリカ"], ["オセアニア","オセアニア"], ["アフリカ","アフリカ"]], :prompt => "選択してください", class: 'form-control', rows: 5 %>
+          <%= f.submit :search %>
+          <% end %>
+          </li>
         <% else %>
+         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+        </ul>
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item text-light pr-4">地域ごとに見る</li>
+          <li class="nav-item "> 
+          <%= form_with url: searches_path, method: :get, local: true do |f| %>
+          <%= f.select :area,[["アジア","アジア"], ["ヨーロッパ","ヨーロッパ"], ["北アメリカ","北アメリカ"], ["南アメリカ","南アメリカ"], ["オセアニア","オセアニア"], ["アフリカ","アフリカ"]], :prompt => "選択してください", class: 'form-control', rows: 5 %>
+          <%= f.submit :search %>
+          </li>
+          <% end %>
         <% end %>
-      </ul>
   </nav>
 </header>
