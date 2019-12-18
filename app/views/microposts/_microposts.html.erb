@@ -11,8 +11,7 @@
           <p><strong>area:</strong><%= post.area %></p>
           <p><strong>country:</strong><%= post.country %></p>
           <p><strong>place:</strong><%= post.place %></tr>
-          <p><strong>comment:</strong><%= post.comment %></tr>
-          < class="border-top">
+          <p class="text-justify"><strong>comment:</strong><%= post.comment %></tr>
           <p>
           <strong>photo:</strong>
           <%= image_tag post.photo.url if post.photo? %>
