@@ -1,5 +1,5 @@
  <% if params[:area].present? %>
- <h1><%= params[:area]%>投稿一覧</h1>
+ <h1 class="hoge"><%= params[:area]%>投稿一覧</h1>
 <%= render 'microposts/micropost', posts: @posts %>
 <%= link_to 'トップページへ戻る', root_path %>
  
