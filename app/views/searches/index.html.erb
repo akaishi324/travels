@@ -1,6 +1,11 @@
  <% if params[:area].present? %>
+ <% if logged_in? %>
+ <h1 class="hoge"><%= params[:area]%>投稿一覧</h1>
+ <%= render 'microposts/microposting', posts: @posts %>
+ <%= link_to 'トップページへ戻る', root_path %>
+ <% else %>
  <h1 class="hoge"><%= params[:area]%>投稿一覧</h1>
 <%= render 'microposts/micropost', posts: @posts %>
 <%= link_to 'トップページへ戻る', root_path %>
- 
+ <% end %>
 <% end %>

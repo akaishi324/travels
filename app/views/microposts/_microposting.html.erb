@@ -17,7 +17,6 @@
            <%= image_tag post.photo.url, alt: "Rails icon"%>
            <% end %>
           </p>
-        </div>
         <% if current_user.favorite?(post) %>
          <%= form_with(model: current_user.favorites.find_by(post_id: post.id), local: true, method: :delete) do |f| %>
          <%= hidden_field_tag :post_id, post.id %>
@@ -29,6 +28,7 @@
          <%= f.submit 'お気に入り登録', class: 'btn btn-primary' %>
         <% end %>
         <% end %>
+        </div>
       </div>
     </li>
  <% end %>
